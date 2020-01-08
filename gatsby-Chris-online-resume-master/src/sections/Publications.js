@@ -94,19 +94,21 @@ const PRPublications = () => (
               <Fade bottom>
                 {ppPublications.map((pp, id) => (
                   <Box m={5}>
-                    <LinkAnimated
-                      onClick={() => window.open(pp.url, '_blank')}
-                      as="h3"
-                      color="primary"
-                      fontWeignt="bold"
-                      my={1}
-                    >
+                    <Text as="h3">
                       <i>{pp.type}</i>
-                    </LinkAnimated>
+                    </Text>
+
                     <Text as="p" my={2}>
                       <ul>
                         {pp.paper.map(p => (
-                          <li>{p}</li>
+                          <LinkAnimated
+                            onClick={() => window.open(pp.url, '_blank')}
+                            color="primary"
+                            fontWeignt="bold"
+                            my={1}
+                          >
+                            <li>{p}</li>
+                          </LinkAnimated>
                         ))}
                       </ul>
                     </Text>
