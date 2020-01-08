@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import Headroom from 'react-headroom';
-import { Flex, Image } from 'rebass';
+import { Flex, Image, Box } from 'rebass';
 import styled from 'styled-components';
 import { SectionLinks } from 'react-scroll-section';
 import Fade from 'react-reveal/Fade';
@@ -56,6 +56,7 @@ const Header = () => (
                 onClick={home.onClick}
                 style={{
                   cursor: 'pointer',
+                  opacity: 0,
                 }}
               />
             );
@@ -71,7 +72,14 @@ const Header = () => (
             return (
               <Fragment>
                 {homeLink}
-                <Flex mr={[0, 3, 5]}>{navLinks}</Flex>
+                <Flex
+                  mr={[0, 2, 4]}
+                  style={{
+                    fontFamily: 'Arial Narrow',
+                  }}
+                >
+                  {navLinks}
+                </Flex>
               </Fragment>
             );
           }}

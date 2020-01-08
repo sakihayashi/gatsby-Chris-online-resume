@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
 import FontAwesomeIcon from 'react-fontawesome';
 import Section from '../components/Section';
-import { CardContainer, Card } from '../components/Card';
+import { CardContainer, Card } from '../components/CardAward';
 import Triangle from '../components/Triangle';
 import ImageSubtitle from '../components/ImageSubtitle';
 
@@ -31,8 +31,8 @@ const Background = () => (
 
     <Triangle
       color="primaryDark"
-      height={['40vh', '15vh']}
-      width={['100vw', '100vw']}
+      height={['30vh', '35vh']}
+      width={['60vw', '70vw']}
       invertX
       invertY
     />
@@ -44,29 +44,37 @@ const CoverImage = styled.img`
   object-fit: cover;
 `;
 
-const EllipsisHeading = styled(Heading)`
+const EllipsisHeading = styled.h3`
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-inline-box;
   -webkit-line-clamp: 2;
+  padding: 10px;
   -webkit-box-orient: vertical;
   border-bottom: ${props => props.theme.colors.primary} 5px solid;
 `;
 
 const allAwards = [
   {
+    name: 'Commitee Member , Association for Healthcare Social Media (AHSM)',
+    date1: 'Apr 2019 — Present',
+    place: 'Philadelphia',
+    archivement:
+      '<ul><li style="margin-bottom: 8px;"><span>One of four elected state representatives in Washington D.C. selected to meet with congress officials as an advocate for EMS legislation policies</span></li><li>Exectuive Advisor for selecting speakers and sponsoes for the annual International Conference for AHSM</li></ul>',
+  },
+  {
     name: 'Pennsylvania Representative for National EMS Policy Advocation',
     date1: 'Apr 2019',
     place: 'Washington D.C.',
     archivement:
-      '<ul><li>One of four elected state representatives in Washington D.C. selected to meet with congress officials as an advocate for EMS legislation policies</li></ul>',
+      '<ul><li >Student selected to sit on board for largest medical association committed to social media stewardship for physicians and medical providers</li></ul>',
   },
   {
     name: 'USGA- AJGA Leadership Links Campaign Director',
-    date1: 'Dec 2019 — Dec 2019',
+    date1: 'Dec 2019',
     place: 'N/A',
     archivement:
-      '<ul><li>Organized massive social media outreach to raise funds for the Bluffton, SC, branch of First Tee, a national golf program that uses golf to educate underprivileged children</li><li>Formed partnership with the Golf Channel to gain nationwide social media attention for fundraising</li><li>Raised over $10,000 within six months</li></ul>',
+      '<ul><li style="margin-bottom: 8px;">Organized massive social media outreach to raise funds for the Bluffton, SC, branch of First Tee, a national golf program that uses golf to educate underprivileged children</li><li>Formed partnership with the Golf Channel to gain nationwide social media attention for fundraising</li><li>Raised over $10,000 within six months</li></ul>',
   },
   {
     name:
@@ -78,7 +86,7 @@ const allAwards = [
   },
   {
     name: 'Co-President of the Freshman Orientation Events',
-    date1: 'Jan 2020 — Jan 2020',
+    date1: 'Jan 2020',
     place: 'N/A',
     archivement:
       '<ul><li>Built upon work as an Admission&apos;s Office Student Intern for social media and prospective student outreach to serve as the co-head of the orietnaiton week planning and oversight for the Class of 2023.</li></ul>',
@@ -165,7 +173,7 @@ MorePosts.propTypes = {
 
 const edgeToArray = data => data.edges.map(edge => edge.node);
 
-const Writing = () => (
+const Awards = () => (
   <StaticQuery
     query={graphql`
       query MediumPostQuery {
@@ -215,8 +223,8 @@ const Writing = () => (
 
       return (
         isMediumUserDefined && (
-          <Section.Container id="writing" Background={Background}>
-            <Section.Header name="AWARDS AND HONORS" icon="" label="writing" />
+          <Section.Container id="awards" Background={Background}>
+            <Section.Header name="AWARDS" icon="" label="writing" />
             {/* <CardContainer minWidth="300px">
               {posts.map(({ Component, ...rest }) => (
                 <Fade bottom key={rest.id}>
@@ -227,10 +235,8 @@ const Writing = () => (
             <CardContainer minWidth="300px">
               {allAwards.map((award, id) => (
                 <Fade bottom key={id}>
-                  <Card pb={4}>
-                    <EllipsisHeading m={3} p={1}>
-                      {award.name}
-                    </EllipsisHeading>
+                  <Card pb={2} m={2}>
+                    <EllipsisHeading>{award.name}</EllipsisHeading>
                     {/* {image && <CoverImage src={image} height="200px" alt={title} />} */}
                     <Text m={3}>
                       <div
@@ -259,4 +265,4 @@ const Writing = () => (
   />
 );
 
-export default Writing;
+export default Awards;

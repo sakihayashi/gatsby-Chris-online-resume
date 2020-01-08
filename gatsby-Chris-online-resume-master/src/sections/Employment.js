@@ -103,16 +103,7 @@ const ProjectTag = styled.div`
   }
 `;
 
-const Project = ({
-  name,
-  projectUrl,
-  logo,
-  description01,
-  description02,
-  rawdesc,
-  place,
-  workperiod,
-}) => (
+const Project = ({ name, projectUrl, logo, rawdesc, place, workperiod }) => (
   <Card p={0}>
     <Flex style={{ height: CARD_HEIGHT }}>
       <TextContainer>
@@ -122,10 +113,6 @@ const Project = ({
           </Title>
         </span>
         <Text width={[1]} style={{ overflow: 'auto' }}>
-          {/* <ul> */}
-          {/* <li>{description01}</li>
-            <li>{description01}</li>
-            {description02} */}
           <div
             key={`body`}
             id="___gatsby"
@@ -206,9 +193,9 @@ Project.propTypes = {
 //   }).isRequired,
 // };
 
-const Projects = () => (
-  <Section.Container id="projects" Background={Background}>
-    <Section.Header name="EMPLOYMENT HISTORY" icon="" label="notebook" />
+const Employment = () => (
+  <Section.Container id="employment" Background={Background}>
+    <Section.Header name="EMPLOYMENT EXPERIENCE" icon="" label="notebook" />
     <StaticQuery
       query={graphql`
         query ProjectsQuery {
@@ -242,23 +229,6 @@ const Projects = () => (
               }
             }
           }
-          #   allContentfulProject {
-          #     nodes {
-          #       workperiod
-          #       place
-          #       logo {
-          #         title
-          #         image: resize(width: 200, quality: 100) {
-          #           src
-          #         }
-          #       }
-          #       rawdesc {
-          #         childMarkdownRemark {
-          #           html
-          #         }
-          #       }
-          #     }
-          #   }
         }
       `}
       render={({ contentfulAbout }) => (
@@ -274,4 +244,4 @@ const Projects = () => (
   </Section.Container>
 );
 
-export default Projects;
+export default Employment;

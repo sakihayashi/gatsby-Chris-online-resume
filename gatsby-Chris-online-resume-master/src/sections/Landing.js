@@ -8,12 +8,6 @@ import SocialLink from '../components/SocialLink';
 import MouseIcon from '../components/MouseIcon';
 import Triangle from '../components/Triangle';
 
-// const fontSizes: {
-//   'h1-sm': '10px',
-//   'h1-md': '14px',
-//   'h1-lg': '16px',
-// },
-
 const Background = () => (
   <div>
     <Triangle
@@ -122,6 +116,7 @@ const LandingPage = () => (
                   fontSize={[1, 2, 3]}
                   textAlign="center"
                   color="primary"
+                  lineHeight={[1, 1.5, 1.5]}
                 >
                   Garnered experiences in national leadership and board
                   positions. Augmenting uniquely meaningful entrepreneurial,

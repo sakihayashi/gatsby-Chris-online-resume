@@ -41,8 +41,8 @@ const ProfilePicture = styled(Image)`
   }
 `;
 
-const About = () => (
-  <Section.Container id="about" Background={Background}>
+const Education = () => (
+  <Section.Container id="education" Background={Background}>
     <Section.Header name="EDUCATION" icon="" label="person" />
     <StaticQuery
       query={graphql`
@@ -66,16 +66,16 @@ const About = () => (
         const { aboutMe, profile } = data.contentfulAbout;
         return (
           <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
-            <Box width={[2 / 3, 2 / 3, 2 / 3]} px={[1, 2, 4]}>
+            <Box width={[1, 1, 2 / 3]} px={[1, 2, 4]}>
               <Fade bottom>
-                <Flex mx={-2}>
+                <Flex mx={-2} py={[1, 2, 4]}>
                   <Box width={1 / 6} px={1}>
                     <Image
                       src={
                         'https://res.cloudinary.com/dewhx8bb4/image/upload/v1578339514/Chris-resume/swarthmore_logo-square_kjcysn.png'
                       }
                       sx={{
-                        width: ['10%', '10%'],
+                        width: ['10%', '10%', '20%'],
                         borderRadius: 8,
                       }}
                     />
@@ -110,11 +110,11 @@ const About = () => (
                   </Box>
                 </Flex>
 
-                <Flex mx={-2}>
+                <Flex mx={-2} py={[1, 2, 4]}>
                   <Box width={1 / 6} px={1}>
                     <Image
                       src={
-                        'https://res.cloudinary.com/dewhx8bb4/image/upload/v1578339514/Chris-resume/swarthmore_logo-square_kjcysn.png'
+                        'https://res.cloudinary.com/dewhx8bb4/image/upload/v1578419418/Chris-resume/University_of_Pennsylvania-logo_v3sik1.jpg'
                       }
                       sx={{
                         width: ['40%', '40%'],
@@ -138,7 +138,7 @@ const About = () => (
                     <Text p={1} color="primary" as="p">
                       <ul>
                         <li>
-                          - Doctoral and Graduate Level Courses at the Perelman
+                          Doctoral and Graduate Level Courses at the Perelman
                           School of Medicine beginning first year undergraduate
                         </li>
                       </ul>
@@ -146,14 +146,14 @@ const About = () => (
                   </Box>
                 </Flex>
 
-                <Flex mx={-2}>
+                <Flex mx={-2} py={[1, 2, 4]}>
                   <Box width={1 / 6} px={1}>
                     <Image
                       src={
-                        'https://res.cloudinary.com/dewhx8bb4/image/upload/v1578339514/Chris-resume/swarthmore_logo-square_kjcysn.png'
+                        'https://res.cloudinary.com/dewhx8bb4/image/upload/v1578365351/Chris-resume/stanford-university-logo_proqfv.png'
                       }
                       sx={{
-                        width: ['40%', '40%'],
+                        width: ['20%', '40%'],
                         borderRadius: 8,
                       }}
                     />
@@ -175,12 +175,12 @@ const About = () => (
                     <Text p={1} color="primary" as="p">
                       <ul>
                         <li>
-                          - Selected from an international applicant pool to
+                          Selected from an international applicant pool to
                           represent Swarthmore College as a Fellow at Stanford
                           University
                         </li>
                         <li>
-                          - Coursework centered in areas such as business
+                          Coursework centered in areas such as business
                           education and design thinking methods
                         </li>{' '}
                       </ul>
@@ -196,7 +196,7 @@ const About = () => (
             </Box>
 
             <Box
-              width={[1 / 3, 1 / 3, 1 / 3]}
+              width={[1, 1, 2 / 6]}
               style={{ maxWidth: '200px', margin: 'auto' }}
             >
               <Fade right>
@@ -215,4 +215,4 @@ const About = () => (
   </Section.Container>
 );
 
-export default About;
+export default Education;
