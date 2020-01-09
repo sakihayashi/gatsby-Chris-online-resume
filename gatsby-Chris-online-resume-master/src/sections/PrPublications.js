@@ -31,6 +31,11 @@ const Background = () => (
   </div>
 );
 
+const ListText = styled.span`
+  font-size: 16px;
+  font-weight: 500;
+`;
+
 const printPublications = [
   {
     name: 'Five Benefits to Becoming an EMT in College',
@@ -71,8 +76,8 @@ const PrPublications = () => (
       `}
       render={data => {
         return (
-          <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
-            <Box>
+          <Flex justifyContent="left" alignItems="center" flexWrap="wrap">
+            <Box mx={4} my={2}>
               <Fade bottom>
                 {printPublications.map((pp, id) => (
                   <Box my={5}>
@@ -85,9 +90,11 @@ const PrPublications = () => (
                     <Text as="p" fontWeight="regular">
                       {pp.publisher}
                     </Text>
-                    <Text as="p">
+                    <Text as="p" fontSize="1.4rem">
                       <ul>
-                        <li>{pp.detail}</li>
+                        <li>
+                          <ListText>{pp.detail}</ListText>
+                        </li>
                       </ul>
                     </Text>
                   </Box>

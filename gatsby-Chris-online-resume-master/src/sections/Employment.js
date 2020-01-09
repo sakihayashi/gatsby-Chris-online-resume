@@ -108,11 +108,16 @@ const Project = ({ name, projectUrl, logo, rawdesc, place, workperiod }) => (
     <Flex style={{ height: CARD_HEIGHT }}>
       <TextContainer>
         <span>
-          <Title my={2} pb={1}>
+          <Title my={0} pb={0}>
             {name}
           </Title>
         </span>
-        <Text width={[1]} style={{ overflow: 'auto' }}>
+        <Text
+          width={[1]}
+          style={{ overflow: 'auto' }}
+          fontSize="1.4rem"
+          lineHeight="1.1rem"
+        >
           <div
             key={`body`}
             id="___gatsby"

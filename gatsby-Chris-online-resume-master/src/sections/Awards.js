@@ -54,42 +54,58 @@ const EllipsisHeading = styled.h3`
   border-bottom: ${props => props.theme.colors.primary} 5px solid;
 `;
 
+const ListText = styled.span`
+  font-size: 16px;
+  font-weight: 500;
+`;
+
 const allAwards = [
   {
     name: 'Commitee Member , Association for Healthcare Social Media (AHSM)',
     date1: 'Apr 2019 — Present',
     place: 'Philadelphia',
     archivement:
-      '<ul><li style="margin-bottom: 8px;"><span>One of four elected state representatives in Washington D.C. selected to meet with congress officials as an advocate for EMS legislation policies</span></li><li>Exectuive Advisor for selecting speakers and sponsoes for the annual International Conference for AHSM</li></ul>',
+      '<ul><li style="margin-bottom: 8px;"><span style="font-size:16px;">One of four elected state representatives in Washington D.C. selected to meet with congress officials as an advocate for EMS legislation policies</span></li><li><span style="font-size:16px;">Exectuive Advisor for selecting speakers and sponsoes for the annual International Conference for AHSM</span></li></ul>',
+    img: '',
+    imgalt: '',
   },
   {
     name: 'Pennsylvania Representative for National EMS Policy Advocation',
     date1: 'Apr 2019',
     place: 'Washington D.C.',
     archivement:
-      '<ul><li >Student selected to sit on board for largest medical association committed to social media stewardship for physicians and medical providers</li></ul>',
+      '<ul><li ><span style="font-size:16px;">Student selected to sit on board for largest medical association committed to social media stewardship for physicians and medical providers</span></li></ul>',
+    img: '',
+    imgalt: 'Pennsylvania Department of health logo',
   },
   {
     name: 'USGA- AJGA Leadership Links Campaign Director',
     date1: 'Dec 2019',
     place: 'N/A',
     archivement:
-      '<ul><li style="margin-bottom: 8px;">Organized massive social media outreach to raise funds for the Bluffton, SC, branch of First Tee, a national golf program that uses golf to educate underprivileged children</li><li>Formed partnership with the Golf Channel to gain nationwide social media attention for fundraising</li><li>Raised over $10,000 within six months</li></ul>',
+      '<ul><li style="margin-bottom: 8px;"><span style="font-size:16px;">Organized massive social media outreach to raise funds for the Bluffton, SC, branch of First Tee, a national golf program that uses golf to educate underprivileged children</li><li><span style="font-size:16px;">Formed partnership with the Golf Channel to gain nationwide social media attention for fundraising</span></li><li><span style="font-size:16px;">Raised over $10,000 within six months</span></li></ul>',
+    img:
+      'https://res.cloudinary.com/dewhx8bb4/image/upload/v1578602301/Chris-resume/logo-pensil-sq_bjkxaw.png',
+    imgalt: '',
   },
   {
     name:
-      'Member of the Garnet Club Advancement Council at Swarthmore College, 2019',
+      'Member of the Garnet Club Advancement Council at Swarthmore College, 2018',
     date1: 'Nov 2018 — Present',
     place: 'N/A',
     archivement:
-      '<ul><li>First student elected to be a sitting member on the prestigious alumni athletics board for the college</li></ul>',
+      '<ul><li><span style="font-size:16px;">First student elected to be a sitting member on the prestigious alumni athletics board for the college</span></li></ul>',
+    img: '',
+    imgalt: '',
   },
   {
     name: 'Co-President of the Freshman Orientation Events',
     date1: 'Jan 2020',
     place: 'N/A',
     archivement:
-      '<ul><li>Built upon work as an Admission&apos;s Office Student Intern for social media and prospective student outreach to serve as the co-head of the orietnaiton week planning and oversight for the Class of 2023.</li></ul>',
+      '<ul><li><span style="font-size:16px;">Built upon work as an Admission&apos;s Office Student Intern for social media and prospective student outreach to serve as the co-head of the orietnaiton week planning and oversight for the Class of 2023.</span></li></ul>',
+    img: '',
+    imgalt: '',
   },
 ];
 
@@ -132,43 +148,6 @@ const parsePost = author => postFromGraphql => {
     url: `${MEDIUM_URL}/${author.username}/${uniqueSlug}`,
     Component: Post,
   };
-};
-
-const MorePosts = ({ username, name, number }) => (
-  <Card
-    onClick={() => window.open(`${MEDIUM_URL}/${username}/`, '_blank')}
-    p={4}
-  >
-    <Flex
-      flexDirection="column"
-      justifyContent="space-between"
-      style={{ height: '100%' }}
-    >
-      <Box>
-        <EllipsisHeading fontSize={5} my={2}>
-          Hooray! &nbsp;
-          <span role="img" aria-label="party">
-            🎉
-          </span>
-        </EllipsisHeading>
-        <Heading lineHeight={1.5}>
-          It seems that
-          <Text color="secondary">{name}</Text>
-          {`has published ${number} more posts!`}
-        </Heading>
-      </Box>
-      <Heading color="primary" mt={5} textAlign="right">
-        Go to Medium &nbsp;
-        <FontAwesomeIcon name="arrow-right" aria-label="Go to Medium" />
-      </Heading>
-    </Flex>
-  </Card>
-);
-
-MorePosts.propTypes = {
-  username: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  number: PropTypes.number,
 };
 
 const edgeToArray = data => data.edges.map(edge => edge.node);
@@ -237,14 +216,17 @@ const Awards = () => (
                 <Fade bottom key={id}>
                   <Card pb={2} m={2}>
                     <EllipsisHeading>{award.name}</EllipsisHeading>
-                    {/* {image && <CoverImage src={image} height="200px" alt={title} />} */}
-                    <Text m={3}>
+                    {/* {award.img !== '' ? 
+                     <CoverImage src={award.img} height="200px" alt={award.imgalt} />
+                    : ''} */}
+                    <Text m={3} fontSize="1.4rem">
                       <div
                         key={`body`}
                         id="___gatsby"
                         dangerouslySetInnerHTML={{ __html: award.archivement }}
                       />
                     </Text>
+
                     <ImageSubtitle
                       bg="primary"
                       color="white"

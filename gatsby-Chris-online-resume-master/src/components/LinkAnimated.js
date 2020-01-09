@@ -4,7 +4,7 @@ const LinkAnimated = styled.span`
   text-decoration: none;
   position: relative;
   margin-bottom: 0;
-  padding-bottom: 5px;
+  padding-bottom: 4px;
   color: inherit;
   ${props =>
     props.selected &&

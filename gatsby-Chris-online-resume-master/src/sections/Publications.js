@@ -56,17 +56,17 @@ const ppPublications = [
   {
     type: 'Pending Senior Author Publications',
     paper: [
-      "Transitioning to adult care for pediatric patients with InyammatorD Bowel ,iseaseV Children's Hospital of Philadelphia",
-      "Uenous Thromboembolism Events in Pediatric InyammatorD Bowel ,isease: Rnderstanding Oisk Factors and CutcomesV Children's Hospital of Philadelphia",
-      'A Novel xall to FiH Medical Education: Pragmatic Steps to Encourage ,ialogue and AdvocacD for Providers and Medical Students',
+      "Transitioning to adult care for pediatric patients with Inflammatory Bowel Disease Children's Hospital of Philadelphia",
+      "Venous Thromboembolism Events in Pediatric Inflammatory Bowel Disease: Understanding Risk Factors and Outcomes, Children's Hospital of Philadelphia",
+      'A Novel call to FiH Medical Education: Pragmatic Steps to Encourage Dialogue and Advocacy for Providers and Medical Students',
     ],
     url: ['', ''],
   },
   {
     type: 'Pending Senior Author Publications:',
     paper: [
-      "Signatures of the uman Uirome in IB,V (Multi-Year International Investigation, Children's Hospital of Philadelphia",
-      'Rse of a Novel xhest Tube Insertion ,evice for Rrgent ThoracostomD in an EmergencD ,epartment Setting )RNxRTz: A Oandomi􏰁ed xontrolled TrialV Crozer-Keystone Medical Center and University of Missouri Health System',
+      "Signatures of the Human Virome in IBD Multi-Year International Investigation, Children's Hospital of Philadelphia",
+      'Use of a Novel Chest Tube Insertion Device for Urgent Thoracostomy in an Emergency Department Setting (UNCUT): A Randomized Controlled Trial, Crozer-Keystone Medical Center and University of Missouri Health System ',
     ],
     url: ['', ''],
   },
@@ -89,27 +89,46 @@ const PRPublications = () => (
       `}
       render={data => {
         return (
-          <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
-            <Box>
+          <Flex
+            justifyContent="center"
+            alignItems="center"
+            flexWrap="wrap"
+            m={3}
+          >
+            <Box mx={3} my={2}>
               <Fade bottom>
                 {ppPublications.map((pp, id) => (
-                  <Box m={5}>
+                  <Box mb={5}>
                     <Text as="h3">
                       <i>{pp.type}</i>
                     </Text>
 
-                    <Text as="p" my={2}>
+                    <Text as="p" my={2} fontSize="1.4rem">
                       <ul>
-                        {pp.paper.map(p => (
-                          <LinkAnimated
-                            onClick={() => window.open(pp.url, '_blank')}
-                            color="primary"
-                            fontWeignt="bold"
-                            my={1}
-                          >
-                            <li>{p}</li>
-                          </LinkAnimated>
-                        ))}
+                        {pp.paper.map((p, i) => {
+                          return pp.url[i] !== '' ? (
+                            <li>
+                              <Text my={3} fontSize="16px">
+                                <LinkAnimated
+                                  onClick={() =>
+                                    window.open(pp.url[i], '_blank')
+                                  }
+                                  color="primary"
+                                  fontWeignt="bold"
+                                  selected
+                                >
+                                  {pp.paper[i]}
+                                </LinkAnimated>
+                              </Text>
+                            </li>
+                          ) : (
+                            <li>
+                              <Text my={3} fontSize="16px">
+                                {p}
+                              </Text>
+                            </li>
+                          );
+                        })}
                       </ul>
                     </Text>
                   </Box>

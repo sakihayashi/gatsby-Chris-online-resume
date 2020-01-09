@@ -55,7 +55,7 @@ const LicensesList = [
     date: 'Aug 2019 — Mar 2022',
     type: 'National Certification',
     details: [
-      'Certified by the National Assocaiton for Emergency Technicians to provide life supporting f irst response aid',
+      'Certified by the National Assocaiton for Emergency Technicians to provide life supporting first response aid',
       'Additional Training and Certification Completed for',
     ],
     info: [
@@ -147,6 +147,15 @@ const ProjectTag = styled.div`
   }
 `;
 
+const ListText = styled.span`
+  font-size: 16px;
+  font-weight: 500;
+`;
+
+const NoM = styled.h3`
+  margin: 0px 0px;
+`;
+
 const Licenses = () => (
   <Section.Container id="licenses" Background={Background}>
     <Section.Header name="CURRENT LICENSES AND CERTIFICATES" icon="" label="" />
@@ -192,15 +201,21 @@ const Licenses = () => (
               <Flex style={{ height: CARD_HEIGHT }}>
                 <TextContainer>
                   <span>
-                    <Title my={2} pb={1}>
-                      {l.name}
+                    <Title my={0} pb={1}>
+                      <NoM>{l.name}</NoM>
                     </Title>
                   </span>
-                  <Text width={[1]} style={{ overflow: 'auto' }}>
+                  <Text
+                    width={[1]}
+                    style={{ overflow: 'auto' }}
+                    fontSize="1.4rem"
+                  >
                     {l.details[0] !== '' ? (
                       <ul>
                         {l.details.map(detail => (
-                          <li>{detail}</li>
+                          <li>
+                            <ListText>{detail}</ListText>
+                          </li>
                         ))}
                       </ul>
                     ) : (
@@ -209,7 +224,9 @@ const Licenses = () => (
                     {l.info[0] !== '' ? (
                       <ul>
                         {l.info.map(infoT => (
-                          <li>{infoT}</li>
+                          <li>
+                            <ListText>{infoT}</ListText>
+                          </li>
                         ))}
                       </ul>
                     ) : (

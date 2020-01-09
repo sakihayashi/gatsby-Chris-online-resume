@@ -41,6 +41,11 @@ const ProfilePicture = styled(Image)`
   }
 `;
 
+const ListText = styled.span`
+  font-size: 16px;
+  font-weight: 500;
+`;
+
 const Education = () => (
   <Section.Container id="education" Background={Background}>
     <Section.Header name="EDUCATION" icon="" label="person" />
@@ -90,21 +95,35 @@ const Education = () => (
                     <Text p={1} color="primary" as="h4">
                       <i>Neuroscience and Economics</i>
                     </Text>
-                    <Text p={1} color="primary" as="p">
+                    <Text
+                      p={1}
+                      color="primary"
+                      as="p"
+                      fontWeight="bold"
+                      fontSize="1.4rem"
+                    >
                       <ul>
                         <li>
-                          President of Student Philatrophy Council, Raised over
-                          $100,000 in 12 months personally
+                          <ListText>
+                            President of Student Philatrophy Council, Raised
+                            over $100,000 in 12 months personally
+                          </ListText>
                         </li>
                         <li>
-                          Social Innovation Lab Associate, Alumni Ambassador,
-                          Admissions Office Outreach
+                          <ListText>
+                            Social Innovation Lab Associate, Alumni Ambassador,
+                            Admissions Office Outreach
+                          </ListText>
                         </li>
                         <li>
-                          First Student to sit on the Garnet Advancement Council
-                          for Athletics Alumni
+                          <ListText>
+                            First Student to sit on the Garnet Advancement
+                            Council for Athletics Alumni
+                          </ListText>
                         </li>
-                        <li>Men's NCAA Varsity Golf Team</li>
+                        <li>
+                          <ListText>Men's NCAA Varsity Golf Team</ListText>
+                        </li>
                       </ul>
                     </Text>
                   </Box>
@@ -114,7 +133,7 @@ const Education = () => (
                   <Box width={1 / 6} px={1}>
                     <Image
                       src={
-                        'https://res.cloudinary.com/dewhx8bb4/image/upload/v1578419418/Chris-resume/University_of_Pennsylvania-logo_v3sik1.jpg'
+                        'https://res.cloudinary.com/dewhx8bb4/image/upload/v1578602301/Chris-resume/logo-pensil-sq_bjkxaw.png'
                       }
                       sx={{
                         width: ['40%', '40%'],
@@ -135,11 +154,14 @@ const Education = () => (
                     <Text p={1} color="primary" as="h4">
                       <i>Master's in Bioethics</i>
                     </Text>
-                    <Text p={1} color="primary" as="p">
+                    <Text p={1} color="primary" as="p" fontSize="1.4rem">
                       <ul>
                         <li>
-                          Doctoral and Graduate Level Courses at the Perelman
-                          School of Medicine beginning first year undergraduate
+                          <ListText>
+                            Doctoral and Graduate Level Courses at the Perelman
+                            School of Medicine beginning first year
+                            undergraduate
+                          </ListText>
                         </li>
                       </ul>
                     </Text>
@@ -172,16 +194,20 @@ const Education = () => (
                     <Text p={1} color="primary" as="h4">
                       <i>Innovation Fellowship</i>
                     </Text>
-                    <Text p={1} color="primary" as="p">
+                    <Text p={1} color="primary" as="p" fontSize="1.4rem">
                       <ul>
                         <li>
-                          Selected from an international applicant pool to
-                          represent Swarthmore College as a Fellow at Stanford
-                          University
+                          <ListText>
+                            Selected from an international applicant pool to
+                            represent Swarthmore College as a Fellow at Stanford
+                            University
+                          </ListText>
                         </li>
                         <li>
-                          Coursework centered in areas such as business
-                          education and design thinking methods
+                          <ListText>
+                            Coursework centered in areas such as business
+                            education and design thinking methods
+                          </ListText>
                         </li>{' '}
                       </ul>
                     </Text>
